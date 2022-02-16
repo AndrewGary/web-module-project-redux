@@ -1,12 +1,13 @@
 import React from 'react';
-import { connect } from 'react-redux'
 
 import MovieListItem from './MovieListItem';
 import MovieFooter from './MovieFooter';
 import * as actionCreators from '../actions/movieActions';
+import { connect } from 'react-redux'
 
 const MovieList = (props)=> {
     // const movies = [];
+    console.log('props inside of MovieList: ', props);
     const movies = props.movies;
 
     return (
@@ -21,7 +22,6 @@ const MovieList = (props)=> {
                     <th></th>
                 </tr>
                 </thead>
-                {console.log('props: ', props)}
                 <tbody>
                     {
                         movies.map(movie=><MovieListItem key={movie.id} movie={movie}/>)

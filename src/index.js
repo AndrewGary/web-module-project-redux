@@ -4,14 +4,16 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 import reducer from './reducers';
-const store = createStore(
-  reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-)
+
 
 import App from './components/App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
+
+const store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+)
 
 ReactDOM.render(
   <Provider store={store}>

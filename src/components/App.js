@@ -1,17 +1,18 @@
 import React from "react";
 
 import { Route, Switch, Redirect } from "react-router-dom";
-import { connect } from 'react-redux';
 
 import MovieList from './MovieList';
 import Movie from './Movie';
-
 import MovieHeader from './MovieHeader';
-
 import AddMovieForm from './AddMovieForm';
 import FavoriteMovieList from './FavoriteMovieList';
 
-const App = props => {
+
+import * as actionCreators from '../actions/movieActions';
+import { connect } from 'react-redux';
+
+const App = (props) => {
   const displayFavorites = true;
 
   return (
@@ -48,4 +49,4 @@ const App = props => {
   );
 };
 
-export default App;
+export default connect(state => state, actionCreators)(App);
