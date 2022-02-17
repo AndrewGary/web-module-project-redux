@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 const MovieList = (props)=> {
     // const movies = [];
     console.log('props inside of MovieList: ', props);
-    const movies = props.movies;
+    const { movies } = props.movieReducer;
 
     return (
         <div className="col">

@@ -3,19 +3,18 @@ import { useParams, useHistory } from 'react-router-dom';
 
 import * as actionCreators from '../actions/movieActions';
 import { connect } from 'react-redux'
-import reducer from '../reducers/movieReducer';
 
 const Movie = (props) => {
     const { id } = useParams();
     const { push } = useHistory();
 
-    const movies = props.movies;
+    console.log("1234 props: ", props);
+
+    const { movies } = props.movieReducer;
+    
     const movie = movies.find(movie=>movie.id===Number(id));
 
     const handleDelete = e => {
-        // console.log('movie.id: ', movie.id)
-        // console.log('actionCreators.deleteMovie(movie.id): ', actionCreators.deleteMovie(movie.id));
-        // reducer(actionCreators.deleteMovie(movie.id))
         props.deleteMovie(movie.id);
         push('/movies');
     }
