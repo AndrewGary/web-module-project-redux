@@ -10,8 +10,6 @@ import { connect } from 'react-redux'
 const Movie = (props) => {
     const { id } = useParams();
     const { push } = useHistory();
-    console.log('actionCreators: ', actionCreators);
-    console.log('addFavorite: ', addFavorite)
 
     const { movies } = props.movieReducer;
     

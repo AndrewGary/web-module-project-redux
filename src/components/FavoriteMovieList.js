@@ -9,7 +9,6 @@ const FavoriteMovieList = (props) => {
     const {favorites} = props.favoritesReducer;
 
     const handleDelete = (e) => {
-        console.log('propsssssss: ', e);
         props.removeFavorite(e.target.baseURI[e.target.baseURI.length - 1]);
     }
     
