@@ -6,8 +6,6 @@ import * as actionCreators from '../actions/movieActions';
 import { connect } from 'react-redux'
 
 const MovieList = (props)=> {
-    // const movies = [];
-    console.log('props inside of MovieList: ', props);
     const { movies } = props.movieReducer;
 
     return (
@@ -35,4 +33,3 @@ const MovieList = (props)=> {
 }
 
 export default connect(state => state, actionCreators)(MovieList)
-// export default MovieList;
